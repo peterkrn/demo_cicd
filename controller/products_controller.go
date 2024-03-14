@@ -77,7 +77,7 @@ func InsertNewProduct(w http.ResponseWriter, r *http.Request) {
 
 	err := r.ParseForm()
 	if err != nil {
-		sendProductErrorResponse(w, "Error: Parsing data")
+		sendProductErrorResponse("Error: Parsing data")
 		return
 	}
 
@@ -118,7 +118,7 @@ func InsertNewProductGorm(w http.ResponseWriter, r *http.Request) {
 	name := r.Form.Get("name")
 	price, _ := strconv.Atoi(r.Form.Get("price"))
 
-	if name == "" || price == 0 {
+	if name === "" || price == 0 {
 		log.Println("Error: Incomplete data provided")
 		http.Error(w, "Bad Request: Incomplete data", http.StatusBadRequest)
 		return
