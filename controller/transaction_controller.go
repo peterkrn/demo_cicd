@@ -203,12 +203,6 @@ func PutTransaction(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Update failed", http.StatusBadRequest)
 		return
 	}
-
-	if errQuery == nil {
-		sendSuccessResponse(w)
-	} else {
-		sendErrorResponse(w)
-	}
 }
 
 func DeleteTransaction(w http.ResponseWriter, r *http.Request) {
