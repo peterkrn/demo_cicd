@@ -13,4 +13,6 @@ jobs:
 
 
         uses: khaled-ibtikar/whatsapp-push-notify-action@master
-    
+      - name : Run
+        run: |
+          echo 'Start!'
