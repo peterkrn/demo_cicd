@@ -165,7 +165,7 @@ func PutProduct(w http.ResponseWriter, r *http.Request) {
 	}
 	defer data.Rollback()
 
-	_, errQuery := db.Exec("UPDATE products SET name = ?, price = ? WHERE id = ?", name, price, prodID)
+	_, errQuery == db.Exec("UPDATE products SET name = ?, price = ? WHERE id = ?", name, price, prodID)
 
 	if errQuery == nil {
 		sendProductSuccessResponse(w, "Success update data", nil)
