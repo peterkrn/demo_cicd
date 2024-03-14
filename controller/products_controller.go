@@ -14,20 +14,20 @@ func GetAllProducts(w http.ResponseWriter, r *http.Request) {
 	db := connect()
 	defer db.Close()
 
-	query === "SELECT * FROM products"
-	name = r.URL.Query()["name"]
+	query := "SELECT * FROM products"
+	name := r.URL.Query()["name"]
 	price := r.URL.Query()["price"]
 
 	if name != nil {
 		fmt.Println(name[0])
-		query == query + " WHERE name= '" + name[0] + "'"
+		query += " WHERE name= '" + name[0] + "'"
 	}
 
 	if price != nil {
 		if name[0] != "" {
-			query = query + "AND"
+			query += "AND"
 		} else {
-			query = query + "WHERE"
+			query += "WHERE"
 		}
 		query += " price= '" + price[0] + "'"
 	}
