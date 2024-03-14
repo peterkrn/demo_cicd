@@ -21,8 +21,8 @@ jobs:
       - name: Telegram Notify
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ -4122665811 }}
-          token: ${{ 6363565777:AAFxlgGemvp87I0g5axn5xL26fx8Fcxr5Hs }}
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
             A new PR is raised [View all PR's](https://github.com/peterkrn/demo_cicd/pulls)
